@@ -1,7 +1,14 @@
-<!-- EXERCÍCIO CONTAODR -->
+Current counter value: {{ initialCounter }}
+
+<!-- EXERCÍCIO CONTADOR WITH TWO WAY DATA BINDING -->
+<app-contador
+    [(value)]="initialCounter"
+></app-contador>
+
+<!-- EXERCÍCIO CONTADOR WITH EVENT BINDING AND PROPERTY BINDING -->
 <app-contador
     [value]="initialCounter"
-    (clicked)="updatedCounter($event)"
+    (valueChange)="updatedCounter($event)"
 ></app-contador>
 
 <!-- EXEMPLOS DE EVENT BINDING -->

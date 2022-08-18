@@ -7,8 +7,8 @@ import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 })
 export class ContadorComponent implements OnInit {
 
-  @Output() clicked = new EventEmitter();
   @Input() value = 0;
+  @Output() valueChange = new EventEmitter();
 
   constructor() { }
 
@@ -17,11 +17,11 @@ export class ContadorComponent implements OnInit {
 
   increment() {
     this.value++;
-    this.clicked.emit('Incremento. Valor atual: ' + this.value);
+    this.valueChange.emit(this.value);
   }
 
   decrement() {
     this.value--;
-    this.clicked.emit('Decremento. Valor atual: ' + this.value);
+    this.valueChange.emit(this.value);
   }
 }

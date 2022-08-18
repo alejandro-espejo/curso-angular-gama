@@ -19,6 +19,7 @@ export class ExercicioDataBindingComponent implements OnInit {
   initialCounter = 10;
 
   valorDoInput = '';
+  
 
   constructor() {
     setTimeout(() => {
@@ -53,7 +54,8 @@ export class ExercicioDataBindingComponent implements OnInit {
     this.clicado.emit(true);
   }
 
-  updatedCounter($event: any) {
-    console.log('Efetuado um processamento de ', $event)
+  updatedCounter(newValue: number) {
+    this.initialCounter = newValue;
+    console.log('Updated counter, the new value is: ', newValue)
   }
 }
