@@ -6,9 +6,17 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.scss']
 })
 export class AppComponent {
-  title = 'Seja bem-vindo!';
+
+  pudim = 'uma palavra';
+  favoriteColor = 'green';
+  title = 'Seja bem vindo!';
  
   constructor() {
     
+  }
+
+  eventoRecebido($event: any) {
+    console.log('AppComponent: EVENTO RECEBIDO', $event);
+    console.log('Fui clicado');
   }
 }

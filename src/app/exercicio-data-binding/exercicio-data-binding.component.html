@@ -1,0 +1,41 @@
+<!-- EXERCÍCIO CONTAODR -->
+<app-contador
+    [value]="initialCounter"
+    (clicked)="updatedCounter($event)"
+></app-contador>
+
+<!-- EXEMPLOS DE EVENT BINDING -->
+
+<h1>Exemplos Event Binding</h1>
+
+<button (click)="onCLickBotaoEmissor($event)">
+    Emitir informação de clique.
+</button>
+<br><br>
+<button (click)="onClick($event)" (mouseenter)="passouMouse()">Clique em mim!</button>
+
+<input type="text" [value]="valorDoInput" (keyup)="digitouAlgo($event)"> {{ valorDoInput }}
+
+<hr>
+
+<!-- EXEMPLOS DE PROPERTY BINDING -->
+
+<h2>Palavra: {{ palavra }}</h2>
+<h2>Cor: {{ color }}</h2>
+
+<input type="text" [value]="initialValue">
+
+<br>
+
+<button [disabled]="isDisabled">Clique em mim!</button>
+
+<br>
+
+<!-- Exemplo de Binding de Atributos e com condição -->
+<!-- aria-label: texto alternativo no HTML, attr: usado para fazer o binding da propriedade -->
+<p [attr.aria-label]="isDisabled ? 'Botão desabilitado' : accessibilityText">
+    Um texto qualquer...
+</p>
+
+<!-- Exemplo de Property binding, ao colocar o '[]' não é necessário usar o '{}' para identificar a variavel -->
+<img [src]="imageURL">
