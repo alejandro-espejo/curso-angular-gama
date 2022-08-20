@@ -8,6 +8,7 @@ import { HeaderComponent } from './header/header.component';
 import { HomeComponent } from './home/home.component';
 import { ExercicioDataBindingComponent } from './exercicio-data-binding/exercicio-data-binding.component';
 import { ContadorComponent } from './contador/contador.component';
+import { ExercicioDiretivasComponent } from './exercicio-diretivas/exercicio-diretivas.component';
 
 @NgModule({
   declarations: [
@@ -16,7 +17,8 @@ import { ContadorComponent } from './contador/contador.component';
     HomeComponent,
     FooterComponent,
     ExercicioDataBindingComponent,
-    ContadorComponent
+    ContadorComponent,
+    ExercicioDiretivasComponent
   ],
   imports: [
     BrowserModule,

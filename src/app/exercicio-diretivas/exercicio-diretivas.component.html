@@ -1,0 +1,63 @@
+
+<p>
+    current value inside mustDisplay: {{ mustDisplay }}
+</p>
+
+<button (click)="changeValue()">Exchange value</button>
+<div *ngIf="mustDisplay; else elseBlock">
+    Olá! Estou dentro do ngIf.
+</div>
+
+<!-- Example condition false -->
+<div *ngIf="!mustDisplay">
+    I will be displayed, when 'mustDisplay' is false!
+</div>
+
+<!-- Example else -->
+<ng-template #elseBlock>
+    I will be displayed, when 'mustDisplay' is false!
+</ng-template>
+
+<!-- Sintaxe Abreviada -->
+<div *ngIf="sum(6, 5) > 10">
+    Exibe baseado na soma.
+</div>
+
+<!-- Sintaxe Expandida -->
+<ng-template [ngIf]="mustDisplay">
+    <div>
+        Content to render when condition is true.
+    </div>
+</ng-template>
+
+<!-- if and else-->
+<div *ngIf="mustDisplay; then thenBlock else elseBlock2"></div>
+<ng-template #thenBlock>
+    I will be displayed, when 'mustDisplay' is true!
+</ng-template>
+<ng-template #elseBlock2>
+    I will be displayed, when 'mustDisplay' is false!
+</ng-template>
+
+<hr>
+
+<ul>
+    <li *ngFor="let fruit of fruitlist"> {{ fruit }} </li>
+</ul>
+
+<!-- Example FOR -->
+<p *ngFor="let fruit of fruitlist"> {{ fruit }} </p>
+
+<!-- FOR with index -->
+<ul>
+    <li *ngFor="let car of carslist; let i = index">
+        {{ i + 1 }} - {{ car.board + " - " + car.color }}
+    </li>
+</ul>
+
+<!-- FOR with index and first -->
+<ul>
+    <li *ngFor="let car of carslist; index as i; first as primeiro; last as ultimo">
+        {{ primeiro }} - {{ i + 1 }} - {{ car.board + " - " + car.color }} - {{ ultimo }}
+    </li>
+</ul>
