@@ -61,3 +61,21 @@
         {{ primeiro }} - {{ i + 1 }} - {{ car.board + " - " + car.color }} - {{ ultimo }}
     </li>
 </ul>
+
+<hr>
+
+<H2>Resolução do exercício</H2>
+
+<div style="margin-top: 10px">
+    <ul>
+        <li *ngFor="let itemMeme of MEMES_AGRUPADOS_POR_CATEGORIA">
+            <h2>{{ itemMeme.categoria }}</h2>
+            <div *ngFor="let meme of itemMeme.memes; let par = even">
+                <img [src]="PREFIXO_IMAGEM_URL + meme.imagemURL" *ngIf="par; else blocoPar">
+                <ng-template #blocoPar>
+                    <h2> IMAGEM PAR NÃO EXIBIDO </h2>
+                </ng-template>
+            </div>
+        </li>
+    </ul>
+</div>

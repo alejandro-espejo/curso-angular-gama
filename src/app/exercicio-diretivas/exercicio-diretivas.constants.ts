@@ -67,4 +67,5 @@ export const MEMES_AGRUPADOS_POR_CATEGORIA = [{
       titulo: 'Lorem ipsum',
       imagemURL: '/outros-5.jpg'
     }]
-  }];
+  }
+];
